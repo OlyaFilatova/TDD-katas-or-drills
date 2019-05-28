@@ -16,8 +16,7 @@ describe("Test bowling game", function(){
 	});
 
 	it("Test one spare", function(){
-		game.roll(5);
-		game.roll(5);
+		rollSpare();
 		game.roll(3);
 		rollMany(17, 0);
 		expect(game.score()).toBe(16);
@@ -27,5 +26,9 @@ describe("Test bowling game", function(){
 		for(let i = 0; i < n; i++) {
 			game.roll(pins);
 		}
+	};
+	let rollSpare = function() {
+		game.roll(5);
+		game.roll(5);
 	};
 });
