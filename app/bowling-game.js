@@ -6,8 +6,10 @@ let Game = function(){
 	};
 	this.score = function() {
 		let score = 0;
-		for(let i = 0; i < 21; i++) {
-			score += rolls[i];
+		let frameIndex = 0;
+		for(let frame = 0; frame < 10; frame++) {
+			score += rolls[frameIndex] + rolls[frameIndex+1];
+			frameIndex += 2;
 		}
 		return score;
 	};
