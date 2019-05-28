@@ -6,16 +6,12 @@ describe("Test bowling game", function(){
 		game = new Game();
 	});
 	it("Test gutter game", function(){
-		let n = 20;
-		let pins = 0;
-		rollMany(n, pins);
+		rollMany(20, 0);
 		expect(game.score()).toBe(0);
 	});
 
 	it("Test all ones", function(){
-		for(let i = 0; i < 20; i++) {
-			game.roll(1);
-		}
+		rollMany(20, 1);
 		expect(game.score()).toBe(20);
 	});
 
