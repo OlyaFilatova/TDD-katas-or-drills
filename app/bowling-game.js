@@ -1,7 +1,10 @@
 let Game = function(){
-	this.roll = function(pins) {};
+	let current_score = 0;
+	this.roll = function(pins) {
+		current_score += pins;
+	};
 	this.score = function() {
-		return 0;
+		return current_score;
 	};
 };
 
