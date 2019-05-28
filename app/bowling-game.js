@@ -11,7 +11,7 @@ let Game = function(){
 			if(isSpare(frameIndex)) {
 				score += 10 + spareBonus(frameIndex);
 			}else{
-				score += rolls[frameIndex] + rolls[frameIndex+1];
+				score += sumOfPinsInFrame(frameIndex);
 			}
 			frameIndex += 2;
 		}
@@ -23,6 +23,9 @@ let Game = function(){
 	};
 	let spareBonus = function(frameIndex) {
 		return rolls[frameIndex + 2];
+	};
+	let sumOfPinsInFrame = function(frameIndex) {
+		return rolls[frameIndex] + rolls[frameIndex+1];
 	};
 };
 
