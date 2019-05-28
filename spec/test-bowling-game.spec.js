@@ -6,8 +6,10 @@ describe("Test bowling game", function(){
 		game = new Game();
 	});
 	it("Test gutter game", function(){
-		for(let i = 0; i < 20; i++) {
-			game.roll(0);
+		let n = 20;
+		let pins = 0;
+		for(let i = 0; i < n; i++) {
+			game.roll(pins);
 		}
 		expect(game.score()).toBe(0);
 	});
