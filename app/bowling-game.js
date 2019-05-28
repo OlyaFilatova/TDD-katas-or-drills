@@ -1,7 +1,7 @@
 let Game = function(){
 	this.roll = function(pins) {};
 	this.score = function() {
-		return 1;
+		return 0;
 	};
 };
 
