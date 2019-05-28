@@ -1,10 +1,15 @@
 let Game = function(){
-	let current_score = 0;
+	let rolls = new Array(21).fill(0);
+	let current_roll = 0;
 	this.roll = function(pins) {
-		current_score += pins;
+		rolls[current_roll++] = pins;
 	};
 	this.score = function() {
-		return current_score;
+		let score = 0;
+		for(let i = 0; i < 21; i++) {
+			score += rolls[i];
+		}
+		return score;
 	};
 };
 
