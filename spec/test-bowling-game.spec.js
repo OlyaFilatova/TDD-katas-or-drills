@@ -8,9 +8,7 @@ describe("Test bowling game", function(){
 	it("Test gutter game", function(){
 		let n = 20;
 		let pins = 0;
-		for(let i = 0; i < n; i++) {
-			game.roll(pins);
-		}
+		rollMany(n, pins);
 		expect(game.score()).toBe(0);
 	});
 
@@ -20,4 +18,10 @@ describe("Test bowling game", function(){
 		}
 		expect(game.score()).toBe(20);
 	});
+
+	let rollMany = function(n, pins){
+		for(let i = 0; i < n; i++) {
+			game.roll(pins);
+		}
+	};
 });
