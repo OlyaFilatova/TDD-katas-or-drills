@@ -30,6 +30,11 @@ describe("Test bowling game", function(){
 		expect(game.score()).toBe(24);
 	});
 
+	it("Test perfect game", function(){
+		rollMany(12, 10);
+		expect(game.score()).toBe(300);
+	});
+
 	let rollMany = function(n, pins){
 		for(let i = 0; i < n; i++) {
 			game.roll(pins);
