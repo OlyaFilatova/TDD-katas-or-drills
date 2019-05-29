@@ -21,6 +21,14 @@ describe("Test bowling game", function(){
 		rollMany(17, 0);
 		expect(game.score()).toBe(16);
 	});
+	
+	it("Test one strike", function(){
+		game.roll(10); // strike
+		game.roll(3);
+		game.roll(4);
+		rollMany(16, 0);
+		expect(game.score()).toBe(24);
+	});
 
 	let rollMany = function(n, pins){
 		for(let i = 0; i < n; i++) {
