@@ -21,9 +21,9 @@ describe("Test bowling game", function(){
 		rollMany(17, 0);
 		expect(game.score()).toBe(16);
 	});
-	
+
 	it("Test one strike", function(){
-		game.roll(10); // strike
+		rollStrike();
 		game.roll(3);
 		game.roll(4);
 		rollMany(16, 0);
@@ -38,5 +38,8 @@ describe("Test bowling game", function(){
 	let rollSpare = function() {
 		game.roll(5);
 		game.roll(5);
+	};
+	let rollStrike = function(){
+		game.roll(10);
 	};
 });
