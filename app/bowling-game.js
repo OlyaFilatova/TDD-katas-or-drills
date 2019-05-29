@@ -8,8 +8,8 @@ let Game = function(){
 		let score = 0;
 		let frameIndex = 0;
 		for(let frame = 0; frame < 10; frame++) {
-			if (rolls[frameIndex] == 10) {
-				score += 10 + rolls[frameIndex + 1] + rolls[frameIndex + 2];
+			if (isStrike(frameIndex)) {
+				score += 10 + strikeBonus(frameIndex);
 				frameIndex++;
 			} else if(isSpare(frameIndex)) {
 				score += 10 + spareBonus(frameIndex);
@@ -25,8 +25,14 @@ let Game = function(){
 	let isSpare = function(frameIndex) {
 		return rolls[frameIndex] + rolls[frameIndex+1] == 10;
 	};
+	let isStrike = function(frameIndex) {
+		return rolls[frameIndex] == 10;
+	};
 	let spareBonus = function(frameIndex) {
 		return rolls[frameIndex + 2];
+	};
+	let strikeBonus = function(frameIndex){
+		return rolls[frameIndex + 1] + rolls[frameIndex + 2];
 	};
 	let sumOfPinsInFrame = function(frameIndex) {
 		return rolls[frameIndex] + rolls[frameIndex+1];
